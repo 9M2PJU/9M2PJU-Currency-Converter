@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import my.hamradio.currencyconverter.data.model.AppThemeSetting
 import my.hamradio.currencyconverter.data.model.ChartPoint
 import my.hamradio.currencyconverter.data.model.Currency
+import my.hamradio.currencyconverter.data.model.ExpenseCategory
 import my.hamradio.currencyconverter.data.model.ShoppingItem
 import my.hamradio.currencyconverter.data.model.TimePeriod
 import my.hamradio.currencyconverter.data.repository.CurrencyRepository
@@ -26,6 +27,7 @@ data class MainUiState(
     val appTheme: AppThemeSetting = AppThemeSetting.SYSTEM,
     val decimalPrecision: Int = 2,
     val isAutoUpdateEnabled: Boolean = true,
+    val tripBudgetLimit: Double = 0.0,
     val lastUpdatedText: String = "",
     val isSyncing: Boolean = false,
     val syncMessage: String? = null,
@@ -69,6 +71,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val lastUpdated = preferencesRepository.lastUpdatedText
         val shopping = preferencesRepository.getShoppingItems()
         val autoUpdate = preferencesRepository.isAutoUpdateEnabled
+        val budget = preferencesRepository.tripBudgetLimit
 
         _uiState.update { current ->
             current.copy(
@@ -79,7 +82,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 decimalPrecision = precision,
                 lastUpdatedText = lastUpdated,
                 shoppingItems = shopping,
-                isAutoUpdateEnabled = autoUpdate
+                isAutoUpdateEnabled = autoUpdate,
+                tripBudgetLimit = budget
             )
         }
         updateTrends()
@@ -256,19 +260,33 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _uiState.update { it.copy(decimalPrecision = precision) }
     }
 
-    fun addShoppingItem(name: String, foreignPrice: Double, discountPercent: Double, taxPercent: Double, foreignCode: String, homeCode: String) {
+    fun setTripBudgetLimit(limit: Double) {
+        preferencesRepository.tripBudgetLimit = limit
+        _uiState.update { it.copy(tripBudgetLimit = limit) }
+    }
+
+    fun addShoppingItem(
+        name: String,
+        foreignPrice: Double,
+        discountPercent: Double,
+        taxPercent: Double,
+        foreignCode: String,
+        homeCode: String,
+        category: ExpenseCategory = ExpenseCategory.GENERAL
+    ) {
         val discounted = foreignPrice * (1.0 - (discountPercent / 100.0))
         val finalForeign = discounted * (1.0 + (taxPercent / 100.0))
         val homeVal = currencyRepository.convert(finalForeign, foreignCode, homeCode)
         val item = ShoppingItem(
-            name = if (name.isBlank()) "Item #${_uiState.value.shoppingItems.size + 1}" else name,
+            name = if (name.isBlank()) "${category.defaultTitle} #${_uiState.value.shoppingItems.size + 1}" else name,
             foreignPrice = foreignPrice,
             foreignCurrencyCode = foreignCode,
             discountPercent = discountPercent,
             taxPercent = taxPercent,
             finalForeignPrice = finalForeign,
             homeCurrencyCode = homeCode,
-            homePrice = homeVal
+            homePrice = homeVal,
+            category = category
         )
         val updated = listOf(item) + _uiState.value.shoppingItems
         preferencesRepository.saveShoppingItems(updated)
@@ -284,6 +302,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun clearShoppingItems() {
         preferencesRepository.saveShoppingItems(emptyList())
         _uiState.update { it.copy(shoppingItems = emptyList()) }
+    }
+
+    fun exportBackup(): String {
+        return preferencesRepository.exportBackupJson()
+    }
+
+    fun importBackup(jsonString: String): Boolean {
+        val success = preferencesRepository.importBackupJson(jsonString)
+        if (success) {
+            loadInitialData()
+        }
+        return success
     }
 
     fun openCurrencyPicker(mode: CurrencyPickerMode) {

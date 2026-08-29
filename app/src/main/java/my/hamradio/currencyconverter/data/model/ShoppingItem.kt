@@ -12,5 +12,6 @@ data class ShoppingItem(
     val finalForeignPrice: Double,
     val homeCurrencyCode: String,
     val homePrice: Double,
+    val category: ExpenseCategory = ExpenseCategory.GENERAL,
     val timestamp: Long = System.currentTimeMillis()
 )

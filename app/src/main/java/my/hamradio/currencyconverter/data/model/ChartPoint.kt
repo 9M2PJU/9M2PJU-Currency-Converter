@@ -15,7 +15,17 @@ enum class TimePeriod(val labelResName: String, val days: Int) {
 
 enum class AppThemeSetting {
     SYSTEM,
+    DYNAMIC,
     LIGHT,
     DARK,
     OLED
+}
+
+enum class ExpenseCategory(val iconName: String, val defaultTitle: String) {
+    GENERAL("Tag", "General"),
+    FOOD("Restaurant", "Food & Dining"),
+    TRANSPORT("DirectionsCar", "Transport"),
+    LODGING("Hotel", "Stay & Hotel"),
+    SHOPPING("ShoppingBag", "Shopping"),
+    ENTERTAINMENT("ConfirmationNumber", "Entertainment")
 }

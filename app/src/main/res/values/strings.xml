@@ -42,6 +42,28 @@
     
     <!-- Travel & Shopping -->
     <string name="travel_calc_title">Travel &amp; Shopping Assistant</string>
+    <string name="tab_shopping_budget">Trip &amp; Budget</string>
+    <string name="tab_tip_split">Tip &amp; Split Bill</string>
+    <string name="trip_budget_title">Trip Budget Target</string>
+    <string name="set_budget_limit">Set Budget Limit</string>
+    <string name="budget_spent">Spent: %1$s</string>
+    <string name="budget_remaining">Remaining: %1$s</string>
+    <string name="budget_over">Budget Exceeded by %1$s</string>
+    <string name="category_general">General</string>
+    <string name="category_food">Food &amp; Dining</string>
+    <string name="category_transport">Transport</string>
+    <string name="category_lodging">Stay &amp; Hotel</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="export_csv_share">Share Summary / CSV</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="tip_percent">Tip Percentage</string>
+    <string name="split_between">Split Between</string>
+    <string name="people_count">%1$d People</string>
+    <string name="round_up_person">Round Up Per Person</string>
+    <string name="tip_amount">Tip Total</string>
+    <string name="total_with_tip">Total With Tip</string>
+    <string name="per_person">Per Person</string>
     <string name="foreign_price">Foreign Price</string>
     <string name="home_price">Home Currency Value</string>
     <string name="discount_percent">Discount (%)</string>
@@ -81,6 +103,7 @@
     <string name="reset_all_rates">Reset All Rates to Default</string>
     <string name="theme_setting">App Theme</string>
     <string name="theme_system">Follow System</string>
+    <string name="theme_dynamic">Dynamic (Material You)</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark (Deep Blue)</string>
     <string name="theme_oled">OLED Pitch Black</string>
@@ -88,6 +111,12 @@
     <string name="precision_2">2 Decimal Places (Standard)</string>
     <string name="precision_4">4 Decimal Places (Forex)</string>
     <string name="precision_6">6 Decimal Places (Crypto / High Precision)</string>
+    <string name="backup_restore_title">Backup &amp; Restore</string>
+    <string name="backup_export">Export Backup (JSON)</string>
+    <string name="backup_import">Import Backup</string>
+    <string name="backup_copied">Backup JSON copied to clipboard!</string>
+    <string name="backup_imported">Settings &amp; custom rates restored successfully!</string>
+    <string name="backup_invalid">Invalid backup data format</string>
     <string name="about_title">About 9M2PJU Currency App</string>
     <string name="developer_info">Crafted by 9M2PJU</string>
     <string name="offline_guarantee">100% Offline-Capable • No Data Tracking • Instant Math</string>

@@ -42,6 +42,28 @@
     
     <!-- Travel & Shopping -->
     <string name="travel_calc_title">Pembantu Perbelanjaan &amp; Beli-belah</string>
+    <string name="tab_shopping_budget">Belanja &amp; Bajet</string>
+    <string name="tab_tip_split">Tip &amp; Bahagi Bil</string>
+    <string name="trip_budget_title">Sasaran Bajet Perjalanan</string>
+    <string name="set_budget_limit">Tetapkan Had Bajet</string>
+    <string name="budget_spent">Dibelanjakan: %1$s</string>
+    <string name="budget_remaining">Baki: %1$s</string>
+    <string name="budget_over">Melebihi Bajet Sebanyak %1$s</string>
+    <string name="category_general">Umum</string>
+    <string name="category_food">Makanan &amp; Minuman</string>
+    <string name="category_transport">Pengangkutan</string>
+    <string name="category_lodging">Penginapan</string>
+    <string name="category_shopping">Membeli-belah</string>
+    <string name="category_entertainment">Hiburan</string>
+    <string name="export_csv_share">Kongsi Ringkasan / CSV</string>
+    <string name="bill_amount">Jumlah Bil</string>
+    <string name="tip_percent">Peratusan Tip</string>
+    <string name="split_between">Dibahagi Antara</string>
+    <string name="people_count">%1$d Orang</string>
+    <string name="round_up_person">Genapkan Setiap Orang</string>
+    <string name="tip_amount">Jumlah Tip</string>
+    <string name="total_with_tip">Jumlah Termasuk Tip</string>
+    <string name="per_person">Setiap Orang</string>
     <string name="foreign_price">Harga Mata Wang Asing</string>
     <string name="home_price">Nilai Mata Wang Sendiri</string>
     <string name="discount_percent">Diskaun (%)</string>
@@ -81,6 +103,7 @@
     <string name="reset_all_rates">Tetapkan Semula Semua Kadar</string>
     <string name="theme_setting">Tema Aplikasi</string>
     <string name="theme_system">Ikut Sistem</string>
+    <string name="theme_dynamic">Dinamik (Material You)</string>
     <string name="theme_light">Cerah</string>
     <string name="theme_dark">Gelap (Biru Malam)</string>
     <string name="theme_oled">Hitam Pekat (OLED)</string>
@@ -88,6 +111,12 @@
     <string name="precision_2">2 Titik Perpuluhan (Biasa)</string>
     <string name="precision_4">4 Titik Perpuluhan (Forex)</string>
     <string name="precision_6">6 Titik Perpuluhan (Kripto / Ketepatan Tinggi)</string>
+    <string name="backup_restore_title">Sandaran &amp; Pemulihan</string>
+    <string name="backup_export">Eksport Sandaran (JSON)</string>
+    <string name="backup_import">Import Sandaran</string>
+    <string name="backup_copied">Data sandaran JSON telah disalin ke papan keratan!</string>
+    <string name="backup_imported">Tetapan dan kadar tersuai berjaya dipulihkan!</string>
+    <string name="backup_invalid">Format data sandaran tidak sah</string>
     <string name="about_title">Mengenai 9M2PJU Currency App</string>
     <string name="developer_info">Dibangunkan oleh 9M2PJU</string>
     <string name="offline_guarantee">100% Beroperasi Luar Talian • Tiada Penjejakan Data • Pengiraan Pantas</string>

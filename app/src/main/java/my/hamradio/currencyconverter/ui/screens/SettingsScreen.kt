@@ -1,5 +1,8 @@
 package my.hamradio.currencyconverter.ui.screens
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
@@ -11,6 +14,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.Backup
+import androidx.compose.material.icons.outlined.FileDownload
+import androidx.compose.material.icons.outlined.FileUpload
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material.icons.outlined.RestartAlt
@@ -41,6 +47,9 @@ fun SettingsScreen(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
+    var showImportDialog by remember { mutableStateOf(false) }
+    var importText by remember { mutableStateOf("") }
+
     val customCurrencies = remember(uiState.currencies) {
         uiState.currencies.filter { it.isCustomRate }
     }
@@ -195,6 +204,7 @@ fun SettingsScreen(
 
                     val themes = listOf(
                         Pair(AppThemeSetting.SYSTEM, stringResource(R.string.theme_system)),
+                        Pair(AppThemeSetting.DYNAMIC, stringResource(R.string.theme_dynamic)),
                         Pair(AppThemeSetting.LIGHT, stringResource(R.string.theme_light)),
                         Pair(AppThemeSetting.DARK, stringResource(R.string.theme_dark)),
                         Pair(AppThemeSetting.OLED, stringResource(R.string.theme_oled))
@@ -368,6 +378,80 @@ fun SettingsScreen(
             }
         }
 
+        // Backup & Restore Card
+        item {
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = MaterialTheme.colorScheme.surface,
+                tonalElevation = 2.dp,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Outlined.Backup,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = stringResource(R.string.backup_restore_title),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        OutlinedButton(
+                            onClick = {
+                                val json = viewModel.exportBackup()
+                                val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                                val clip = ClipData.newPlainText("9M2PJU-Backup", json)
+                                clipboard.setPrimaryClip(clip)
+
+                                // Also trigger share sheet
+                                val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                                    type = "text/plain"
+                                    putExtra(Intent.EXTRA_SUBJECT, "9M2PJU Currency App - Settings Backup")
+                                    putExtra(Intent.EXTRA_TEXT, json)
+                                }
+                                context.startActivity(Intent.createChooser(shareIntent, "Share Backup JSON"))
+                                Toast.makeText(context, context.getString(R.string.backup_copied), Toast.LENGTH_SHORT).show()
+                            },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Icon(Icons.Outlined.FileUpload, contentDescription = null, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(stringResource(R.string.backup_export), fontSize = 12.sp)
+                        }
+
+                        OutlinedButton(
+                            onClick = {
+                                importText = ""
+                                showImportDialog = true
+                            },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Icon(Icons.Outlined.FileDownload, contentDescription = null, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(stringResource(R.string.backup_import), fontSize = 12.sp)
+                        }
+                    }
+                }
+            }
+        }
+
         // About & Branding Section with Check for App Updates
         item {
             Surface(
@@ -435,5 +519,52 @@ fun SettingsScreen(
                 }
             }
         }
+    }
+
+    if (showImportDialog) {
+        AlertDialog(
+            onDismissRequest = { showImportDialog = false },
+            title = { Text(stringResource(R.string.backup_import)) },
+            text = {
+                Column {
+                    Text(
+                        text = "Paste your exported JSON backup data below to restore your custom exchange rates, shopping cart, and preferences:",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    OutlinedTextField(
+                        value = importText,
+                        onValueChange = { importText = it },
+                        placeholder = { Text("{ \"version\": 2, ... }") },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(140.dp),
+                        maxLines = 6
+                    )
+                }
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        if (importText.isNotBlank()) {
+                            val ok = viewModel.importBackup(importText)
+                            if (ok) {
+                                Toast.makeText(context, context.getString(R.string.backup_imported), Toast.LENGTH_LONG).show()
+                                showImportDialog = false
+                            } else {
+                                Toast.makeText(context, context.getString(R.string.backup_invalid), Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    }
+                ) {
+                    Text(stringResource(R.string.save))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showImportDialog = false }) {
+                    Text(stringResource(R.string.cancel))
+                }
+            }
+        )
     }
 }

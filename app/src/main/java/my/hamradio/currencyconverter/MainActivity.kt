@@ -1,5 +1,6 @@
 package my.hamradio.currencyconverter
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,12 +19,28 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        handleProcessTextIntent(intent)
         setContent {
             val uiState by viewModel.uiState.collectAsState()
             OfflineConverterTheme(themeSetting = uiState.appTheme) {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     MainScreen(viewModel = viewModel)
                 }
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleProcessTextIntent(intent)
+    }
+
+    private fun handleProcessTextIntent(intent: Intent?) {
+        val selectedText = intent?.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)?.toString()
+        if (!selectedText.isNullOrBlank()) {
+            val sanitized = selectedText.filter { it.isDigit() || it == '.' || it == ',' || it in "+-*/" }.replace(',', '.')
+            if (sanitized.isNotBlank()) {
+                viewModel.setInputExpression(sanitized)
             }
         }
     }

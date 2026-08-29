@@ -39,28 +39,34 @@ Designed specifically for international travelers, traders, and privacy-consciou
 - **Quick Denomination Table**: Instant reference matrix for everyday cash transactions.
 - **Bank / Card Markup Calculator**: Simulate foreign exchange transaction fees (0%, 1%, 1.5%, 2.5%, 3.5% credit card/ATM spread) to know the exact net cost.
 
-### 🛍️ 3. Travel & Shopping Expense Assistant
-- **VAT / Sales Tax & Discount Computation**: Enter item price in foreign currency, apply discounts (e.g. 20% OFF) and taxes (e.g. 10% VAT).
-- **Trip Expense Cart**: Save purchased items to a running travel shopping list and monitor grand total expenditures in your home currency.
+### 🛍️ 3. Travel Suite, Trip Budget & Tip/Split Calculator
+- **Trip Budget Goal Tracker**: Set an overall trip budget in home currency with progress bar, spent vs remaining stats, and over-budget alerts.
+- **Categorized Expense Cart**: Track items across categories (*Food & Dining, Transport, Stay & Hotel, Shopping, Entertainment*).
+- **Tip & Split Bill Calculator**: Calculate tip percentages (presets + slider), split bills among 1–30 people, with cash round-up options.
+- **Export & Share CSV**: Share formatted expense summaries and CSV reports via any messaging app or email.
 
 ### 📈 4. Historical Trends & Interactive Charting
 - **Touch-Interactive Canvas Curve**: Smooth bezier curve chart with hover tooltip across **7D, 30D, 90D, and 1 Year** intervals.
 - **Forex Statistics**: High, Low, Average, and Volatility % indicators.
 
-### ⚙️ 5. Offline Custom Rates & Optional Sync
-- **Custom Rate Overrides**: Customize exchange rates for any currency (ideal for street money changers, airport booths, or customs valuations).
-- **Optional Internet Sync**: Update exchange rates from open live APIs on demand when internet is available, with timestamp caching.
-- **Precision Control**: Select 2 decimal places (standard), 4 decimal places (forex), or 6 decimal places (crypto).
-- **OLED Dark Mode**: Choose between System, Light, Deep Navy Dark, and OLED Pitch Black.
-- **Bilingual Localization**: English & Malaysian Malay (`Bahasa Melayu`).
+### 📱 5. Home Screen Widget & System Integration
+- **Android App Widget**: Glance at top pinned currency rates directly from your home screen.
+- **Text Selection Conversion**: Highlight price text in any app (Chrome, Notes, WhatsApp) and tap *"Convert with 9M2PJU"*.
+
+### ⚙️ 6. Offline Custom Rates, Multi-API Redundancy & Backup
+- **Custom Rate Overrides**: Customize exchange rates for any currency.
+- **Multi-Source Redundancy**: Automatic fallback across multiple open rate providers.
+- **Full Backup & Restore**: Export/import settings, custom rates, and trip history as JSON.
+- **Material You Dynamic Theming**: Android 12+ wallpaper-adaptive colors alongside OLED Pitch Black.
+- **Bilingual Localization**: Full English & Malaysian Malay (`Bahasa Melayu`) support.
 
 ---
 
 ## 📦 Supported Assets (120+ Currencies)
 
-- **Fiat Currencies**: USD, EUR, MYR, SGD, GBP, JPY, AUD, CAD, CHF, CNY, HKD, NZD, KRW, INR, THB, IDR, PHP, VND, SAR, AED, TRY, BRL, ZAR, TWD, MXN, BND, KHR, LAK, MMK, SEK, NOK, DKK, PLN, CZK, HUF, RON, BGN, ISK, RSD, UAH, RUB, GEL, ALL, BAM, MDL, MKD, QAR, KWD, BHD, OMR, JOD, ILS, IQD, IRR, LBP, KZT, UZS, AZN, AMD, PKR, BDT, LKR, NPR, MVR, AFN, MNT, CLP, COP, PEN, ARS, UYU, PYG, BOB, CRC, DOP, GTQ, HNL, NIO, PAB, JMD, TTD, BSD, BBD, BMD, KYD, XCD, EGP, NGN, KES, GHS, MAD, DZD, TND, UGX, TZS, ETB, MUR, BWP, NAD, ZMW, XOF, XAF, FJD, PGK, WST, TOP, VUV.
-- **Precious Metals**: Gold (XAU), Silver (XAG), Platinum (XPT), Palladium (XPD).
-- **Cryptocurrencies**: Bitcoin (BTC), Ethereum (ETH), Solana (SOL), BNB (BNB), Ripple (XRP), Dogecoin (DOGE), Cardano (ADA), Tether (USDT), USD Coin (USDC).
+- **Fiat Currencies**: USD, EUR, MYR, SGD, GBP, JPY, AUD, CAD, CHF, CNY, HKD, NZD, KRW, INR, IDR, THB, VND, PHP, SAR, AED, TRY, ZAR, BRL, and 90+ more.
+- **Cryptocurrencies**: Bitcoin (`BTC`), Ethereum (`ETH`), Solana (`SOL`), Binance Coin (`BNB`), Ripple (`XRP`), Cardano (`ADA`), Dogecoin (`DOGE`).
+- **Precious Metals**: Gold Ounce (`XAU`), Silver Ounce (`XAG`), Platinum (`XPT`), Palladium (`XPD`).
 
 ---
 

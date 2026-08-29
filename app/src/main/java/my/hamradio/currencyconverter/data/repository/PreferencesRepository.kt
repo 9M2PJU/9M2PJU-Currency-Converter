@@ -25,11 +25,16 @@ class PreferencesRepository(context: Context) {
         private const val KEY_LAST_UPDATED = "last_updated_timestamp"
         private const val KEY_ONLINE_RATES = "online_rates"
         private const val KEY_AUTO_UPDATE = "auto_update_rates"
+        private const val KEY_BUDGET_LIMIT = "trip_budget_limit"
     }
 
     var isAutoUpdateEnabled: Boolean
         get() = prefs.getBoolean(KEY_AUTO_UPDATE, true)
         set(value) = prefs.edit().putBoolean(KEY_AUTO_UPDATE, value).apply()
+
+    var tripBudgetLimit: Double
+        get() = prefs.getFloat(KEY_BUDGET_LIMIT, 0f).toDouble()
+        set(value) = prefs.edit().putFloat(KEY_BUDGET_LIMIT, value.toFloat()).apply()
 
     var appTheme: AppThemeSetting
         get() {
@@ -125,5 +130,56 @@ class PreferencesRepository(context: Context) {
 
     fun saveShoppingItems(items: List<ShoppingItem>) {
         prefs.edit().putString(KEY_SHOPPING_ITEMS, gson.toJson(items)).apply()
+    }
+
+    fun exportBackupJson(): String {
+        val backupMap = mapOf(
+            "version" to 2,
+            "theme" to appTheme.name,
+            "precision" to decimalPrecision,
+            "baseCurrency" to baseCurrencyCode,
+            "targetCurrency" to targetCurrencyCode,
+            "favorites" to getFavorites().toList(),
+            "customRates" to getCustomRates(),
+            "budgetLimit" to tripBudgetLimit,
+            "shoppingItems" to getShoppingItems()
+        )
+        return gson.toJson(backupMap)
+    }
+
+    fun importBackupJson(jsonString: String): Boolean {
+        return try {
+            val type = object : TypeToken<Map<String, Any>>() {}.type
+            val map: Map<String, Any> = gson.fromJson(jsonString, type) ?: return false
+
+            (map["theme"] as? String)?.let {
+                try { appTheme = AppThemeSetting.valueOf(it) } catch (_: Exception) {}
+            }
+            (map["precision"] as? Number)?.let { decimalPrecision = it.toInt() }
+            (map["baseCurrency"] as? String)?.let { baseCurrencyCode = it }
+            (map["targetCurrency"] as? String)?.let { targetCurrencyCode = it }
+            (map["budgetLimit"] as? Number)?.let { tripBudgetLimit = it.toDouble() }
+
+            (map["favorites"] as? List<*>)?.let { favList ->
+                val favSet = favList.filterIsInstance<String>().toSet()
+                if (favSet.isNotEmpty()) saveFavorites(favSet)
+            }
+
+            (map["customRates"] as? Map<*, *>)?.let { rateMap ->
+                val parsedRates = mutableMapOf<String, Double>()
+                rateMap.forEach { (k, v) ->
+                    if (k is String && v is Number) {
+                        parsedRates[k] = v.toDouble()
+                    }
+                }
+                if (parsedRates.isNotEmpty()) {
+                    prefs.edit().putString(KEY_CUSTOM_RATES, gson.toJson(parsedRates)).apply()
+                }
+            }
+
+            true
+        } catch (e: Exception) {
+            false
+        }
     }
 }

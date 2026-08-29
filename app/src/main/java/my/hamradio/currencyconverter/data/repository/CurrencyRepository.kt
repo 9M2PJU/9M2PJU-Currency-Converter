@@ -178,45 +178,67 @@ class CurrencyRepository(
     }
 
     suspend fun syncLiveRates(): Result<Int> = withContext(Dispatchers.IO) {
-        try {
-            val urlString = "https://open.er-api.com/v6/latest/USD"
-            val url = URL(urlString)
-            val connection = (url.openConnection() as HttpURLConnection).apply {
-                connectTimeout = 8000
-                readTimeout = 8000
-                requestMethod = "GET"
-                setRequestProperty("User-Agent", "9M2PJU-Currency-App/1.0")
-            }
+        val endpoints = listOf(
+            "https://open.er-api.com/v6/latest/USD",
+            "https://api.frankfurter.app/latest?from=USD",
+            "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json"
+        )
 
-            if (connection.responseCode == 200) {
-                val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                val jsonObject = gson.fromJson(reader, JsonObject::class.java)
-                reader.close()
+        for (urlString in endpoints) {
+            try {
+                val url = URL(urlString)
+                val connection = (url.openConnection() as HttpURLConnection).apply {
+                    connectTimeout = 6000
+                    readTimeout = 6000
+                    requestMethod = "GET"
+                    setRequestProperty("User-Agent", "9M2PJU-Currency-App/1.0")
+                }
 
-                val ratesObj = jsonObject.getAsJsonObject("rates")
-                val updatedRates = mutableMapOf<String, Double>()
+                if (connection.responseCode == 200) {
+                    val reader = BufferedReader(InputStreamReader(connection.inputStream))
+                    val jsonObject = gson.fromJson(reader, JsonObject::class.java)
+                    reader.close()
 
-                if (ratesObj != null) {
-                    cachedCurrencies.forEach { curr ->
-                        if (ratesObj.has(curr.code)) {
-                            val newRate = ratesObj.get(curr.code).asDouble
-                            if (newRate > 0) {
-                                updatedRates[curr.code] = newRate
-                                if (!curr.isCustomRate) {
-                                    curr.rate = newRate
+                    // Handle different JSON structures (er-api "rates", frankfurter "rates", fawazahmed "usd")
+                    val ratesObj = when {
+                        jsonObject.has("rates") -> jsonObject.getAsJsonObject("rates")
+                        jsonObject.has("usd") -> jsonObject.getAsJsonObject("usd")
+                        else -> null
+                    }
+
+                    if (ratesObj != null) {
+                        val updatedRates = mutableMapOf<String, Double>()
+                        cachedCurrencies.forEach { curr ->
+                            val lookupKeyUpper = curr.code.uppercase()
+                            val lookupKeyLower = curr.code.lowercase()
+                            val rateElem = if (ratesObj.has(lookupKeyUpper)) {
+                                ratesObj.get(lookupKeyUpper)
+                            } else if (ratesObj.has(lookupKeyLower)) {
+                                ratesObj.get(lookupKeyLower)
+                            } else null
+
+                            if (rateElem != null && rateElem.isJsonPrimitive) {
+                                val newRate = rateElem.asDouble
+                                if (newRate > 0) {
+                                    updatedRates[curr.code] = newRate
+                                    if (!curr.isCustomRate) {
+                                        curr.rate = newRate
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    val nowFormatted = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault()).format(Date())
-                    preferencesRepository.saveOnlineRates(updatedRates, nowFormatted)
-                    return@withContext Result.success(updatedRates.size)
+                        if (updatedRates.isNotEmpty()) {
+                            val nowFormatted = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault()).format(Date())
+                            preferencesRepository.saveOnlineRates(updatedRates, nowFormatted)
+                            return@withContext Result.success(updatedRates.size)
+                        }
+                    }
                 }
+            } catch (e: Exception) {
+                // Continue to next fallback endpoint
             }
-            Result.failure(Exception("Failed to fetch rates, response code: ${connection.responseCode}"))
-        } catch (e: Exception) {
-            Result.failure(e)
         }
+        Result.failure(Exception("All exchange rate servers are currently unreachable. Using offline rates."))
     }
 }
