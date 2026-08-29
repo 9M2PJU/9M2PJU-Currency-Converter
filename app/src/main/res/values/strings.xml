@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">CurrencyX</string>
+    <string name="app_full_title">CurrencyX - Offline Currencies Converter</string>
+    <string name="app_subtitle">100% Offline Multi-Currency &amp; Travel Finance Suite</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="nav_converter">Converter</string>
+    <string name="nav_pair">Pair Calc</string>
+    <string name="nav_travel">Travel &amp; Shop</string>
+    <string name="nav_trends">Trends</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Multi Converter -->
+    <string name="search_currencies">Search currency, code, country...</string>
+    <string name="base_currency">Base Currency</string>
+    <string name="tap_to_change_base">Tap to switch base</string>
+    <string name="all_regions">All</string>
+    <string name="region_sea">SE Asia</string>
+    <string name="region_asia">Asia</string>
+    <string name="region_europe">Europe</string>
+    <string name="region_americas">Americas</string>
+    <string name="region_middle_east">Middle East</string>
+    <string name="region_africa">Africa</string>
+    <string name="region_oceania">Oceania</string>
+    <string name="region_crypto">Crypto</string>
+    <string name="region_commodities">Metals</string>
+    <string name="favorites_only">Favorites</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="custom_rate_indicator">Custom Rate</string>
+    <string name="reset_to_default_rate">Reset to standard rate</string>
+    
+    <!-- Pair Converter & Matrix -->
+    <string name="pair_converter_title">Single Pair Comparison</string>
+    <string name="swap_currencies">Swap Currencies</string>
+    <string name="denomination_matrix">Denomination Quick Matrix</string>
+    <string name="fee_calculator_title">Bank / Card Markup Calculator</string>
+    <string name="markup_fee_percent">Markup / Spread (%)</string>
+    <string name="fee_breakdown">Fee Breakdown</string>
+    <string name="original_rate">Standard Rate</string>
+    <string name="effective_rate">Effective Rate (with fee)</string>
+    <string name="total_with_fee">Total Charged</string>
+    
+    <!-- Travel & Shopping -->
+    <string name="travel_calc_title">Travel &amp; Shopping Assistant</string>
+    <string name="foreign_price">Foreign Price</string>
+    <string name="home_price">Home Currency Value</string>
+    <string name="discount_percent">Discount (%)</string>
+    <string name="tax_percent">VAT / Tax (%)</string>
+    <string name="tip_fee_percent">Tip / Surcharge (%)</string>
+    <string name="item_name">Item Description</string>
+    <string name="add_to_trip_list">Add to Trip Expense</string>
+    <string name="trip_expenses">Trip Expenses</string>
+    <string name="clear_trip_list">Clear List</string>
+    <string name="grand_total">Trip Grand Total</string>
+    
+    <!-- Trends -->
+    <string name="trends_title">Exchange Rate Trends</string>
+    <string name="period_7d">7D</string>
+    <string name="period_30d">30D</string>
+    <string name="period_90d">90D</string>
+    <string name="period_1y">1Y</string>
+    <string name="stat_high">High</string>
+    <string name="stat_low">Low</string>
+    <string name="stat_average">Average</string>
+    <string name="stat_change">Change</string>
+    
+    <!-- Settings & Custom Rates -->
+    <string name="settings_title">Preferences &amp; Rates</string>
+    <string name="custom_rates_title">Custom Rates Manager</string>
+    <string name="edit_custom_rate">Edit Exchange Rate</string>
+    <string name="enter_custom_rate">Enter rate against 1 USD</string>
+    <string name="sync_online_rates">Update Live Rates (Internet)</string>
+    <string name="last_updated">Last updated: %1$s</string>
+    <string name="sync_success">Exchange rates updated successfully!</string>
+    <string name="sync_offline_mode">Device is offline. Using local cached rates.</string>
+    <string name="reset_all_rates">Reset All Rates to Default</string>
+    <string name="theme_setting">App Theme</string>
+    <string name="theme_system">Follow System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark (Deep Blue)</string>
+    <string name="theme_oled">OLED Pitch Black</string>
+    <string name="precision_setting">Decimal Precision</string>
+    <string name="precision_2">2 Decimal Places (Standard)</string>
+    <string name="precision_4">4 Decimal Places (Forex)</string>
+    <string name="precision_6">6 Decimal Places (Crypto / High Precision)</string>
+    <string name="about_title">About CurrencyX</string>
+    <string name="developer_info">Crafted by 9M2PJU</string>
+    <string name="offline_guarantee">100% Offline-Capable • No Data Tracking • Instant Math</string>
+    <string name="version_label">Version %1$s</string>
+    
+    <!-- Dialog Actions -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+    <string name="delete">Delete</string>
+    <string name="select_currency">Select Currency</string>
+</resources>

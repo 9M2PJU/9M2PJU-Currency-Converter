@@ -1,0 +1,1086 @@
+{
+  "base": "USD",
+  "updatedAt": "2026-08-30T00:00:00Z",
+  "currencies": [
+    {
+      "code": "USD",
+      "name": "United States Dollar",
+      "symbol": "$",
+      "flag": "🇺🇸",
+      "region": "Americas",
+      "rate": 1.0,
+      "popular": true
+    },
+    {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "flag": "🇪🇺",
+      "region": "Europe",
+      "rate": 0.925,
+      "popular": true
+    },
+    {
+      "code": "MYR",
+      "name": "Malaysian Ringgit",
+      "symbol": "RM",
+      "flag": "🇲🇾",
+      "region": "Southeast Asia",
+      "rate": 4.425,
+      "popular": true
+    },
+    {
+      "code": "SGD",
+      "name": "Singapore Dollar",
+      "symbol": "S$",
+      "flag": "🇸🇬",
+      "region": "Southeast Asia",
+      "rate": 1.345,
+      "popular": true
+    },
+    {
+      "code": "GBP",
+      "name": "British Pound Sterling",
+      "symbol": "£",
+      "flag": "🇬🇧",
+      "region": "Europe",
+      "rate": 0.788,
+      "popular": true
+    },
+    {
+      "code": "JPY",
+      "name": "Japanese Yen",
+      "symbol": "¥",
+      "flag": "🇯🇵",
+      "region": "Asia",
+      "rate": 154.6,
+      "popular": true
+    },
+    {
+      "code": "AUD",
+      "name": "Australian Dollar",
+      "symbol": "A$",
+      "flag": "🇦🇺",
+      "region": "Oceania",
+      "rate": 1.532,
+      "popular": true
+    },
+    {
+      "code": "CAD",
+      "name": "Canadian Dollar",
+      "symbol": "CA$",
+      "flag": "🇨🇦",
+      "region": "Americas",
+      "rate": 1.385,
+      "popular": true
+    },
+    {
+      "code": "CHF",
+      "name": "Swiss Franc",
+      "symbol": "CHF",
+      "flag": "🇨🇭",
+      "region": "Europe",
+      "rate": 0.892,
+      "popular": true
+    },
+    {
+      "code": "CNY",
+      "name": "Chinese Yuan",
+      "symbol": "¥",
+      "flag": "🇨🇳",
+      "region": "Asia",
+      "rate": 7.235,
+      "popular": true
+    },
+    {
+      "code": "HKD",
+      "name": "Hong Kong Dollar",
+      "symbol": "HK$",
+      "flag": "🇭🇰",
+      "region": "Asia",
+      "rate": 7.81,
+      "popular": true
+    },
+    {
+      "code": "NZD",
+      "name": "New Zealand Dollar",
+      "symbol": "NZ$",
+      "flag": "🇳🇿",
+      "region": "Oceania",
+      "rate": 1.665,
+      "popular": true
+    },
+    {
+      "code": "KRW",
+      "name": "South Korean Won",
+      "symbol": "₩",
+      "flag": "🇰🇷",
+      "region": "Asia",
+      "rate": 1380.0,
+      "popular": true
+    },
+    {
+      "code": "INR",
+      "name": "Indian Rupee",
+      "symbol": "₹",
+      "flag": "🇮🇳",
+      "region": "Asia",
+      "rate": 83.95,
+      "popular": true
+    },
+    {
+      "code": "THB",
+      "name": "Thai Baht",
+      "symbol": "฿",
+      "flag": "🇹🇭",
+      "region": "Southeast Asia",
+      "rate": 35.8,
+      "popular": true
+    },
+    {
+      "code": "IDR",
+      "name": "Indonesian Rupiah",
+      "symbol": "Rp",
+      "flag": "🇮🇩",
+      "region": "Southeast Asia",
+      "rate": 16250.0,
+      "popular": true
+    },
+    {
+      "code": "PHP",
+      "name": "Philippine Peso",
+      "symbol": "₱",
+      "flag": "🇵🇭",
+      "region": "Southeast Asia",
+      "rate": 58.2,
+      "popular": true
+    },
+    {
+      "code": "VND",
+      "name": "Vietnamese Dong",
+      "symbol": "₫",
+      "flag": "🇻🇳",
+      "region": "Southeast Asia",
+      "rate": 25420.0,
+      "popular": true
+    },
+    {
+      "code": "SAR",
+      "name": "Saudi Riyal",
+      "symbol": "﷼",
+      "flag": "🇸🇦",
+      "region": "Middle East",
+      "rate": 3.751,
+      "popular": true
+    },
+    {
+      "code": "AED",
+      "name": "United Arab Emirates Dirham",
+      "symbol": "د.إ",
+      "flag": "🇦🇪",
+      "region": "Middle East",
+      "rate": 3.673,
+      "popular": true
+    },
+    {
+      "code": "TRY",
+      "name": "Turkish Lira",
+      "symbol": "₺",
+      "flag": "🇹🇷",
+      "region": "Europe",
+      "rate": 33.2,
+      "popular": true
+    },
+    {
+      "code": "BRL",
+      "name": "Brazilian Real",
+      "symbol": "R$",
+      "flag": "🇧🇷",
+      "region": "Americas",
+      "rate": 5.58,
+      "popular": true
+    },
+    {
+      "code": "ZAR",
+      "name": "South African Rand",
+      "symbol": "R",
+      "flag": "🇿🇦",
+      "region": "Africa",
+      "rate": 18.25,
+      "popular": true
+    },
+    {
+      "code": "TWD",
+      "name": "New Taiwan Dollar",
+      "symbol": "NT$",
+      "flag": "🇹🇼",
+      "region": "Asia",
+      "rate": 32.55,
+      "popular": true
+    },
+    {
+      "code": "MXN",
+      "name": "Mexican Peso",
+      "symbol": "Mex$",
+      "flag": "🇲🇽",
+      "region": "Americas",
+      "rate": 18.65,
+      "popular": true
+    },
+    {
+      "code": "BND",
+      "name": "Brunei Dollar",
+      "symbol": "B$",
+      "flag": "🇧🇳",
+      "region": "Southeast Asia",
+      "rate": 1.345,
+      "popular": true
+    },
+    {
+      "code": "KHR",
+      "name": "Cambodian Riel",
+      "symbol": "៛",
+      "flag": "🇰🇭",
+      "region": "Southeast Asia",
+      "rate": 4090.0,
+      "popular": false
+    },
+    {
+      "code": "LAK",
+      "name": "Lao Kip",
+      "symbol": "₭",
+      "flag": "🇱🇦",
+      "region": "Southeast Asia",
+      "rate": 22150.0,
+      "popular": false
+    },
+    {
+      "code": "MMK",
+      "name": "Myanmar Kyat",
+      "symbol": "K",
+      "flag": "🇲🇲",
+      "region": "Southeast Asia",
+      "rate": 2095.0,
+      "popular": false
+    },
+    {
+      "code": "SEK",
+      "name": "Swedish Krona",
+      "symbol": "kr",
+      "flag": "🇸🇪",
+      "region": "Europe",
+      "rate": 10.65,
+      "popular": false
+    },
+    {
+      "code": "NOK",
+      "name": "Norwegian Krone",
+      "symbol": "kr",
+      "flag": "🇳🇴",
+      "region": "Europe",
+      "rate": 10.82,
+      "popular": false
+    },
+    {
+      "code": "DKK",
+      "name": "Danish Krone",
+      "symbol": "kr",
+      "flag": "🇩🇰",
+      "region": "Europe",
+      "rate": 6.9,
+      "popular": false
+    },
+    {
+      "code": "PLN",
+      "name": "Polish Zloty",
+      "symbol": "zł",
+      "flag": "🇵🇱",
+      "region": "Europe",
+      "rate": 3.96,
+      "popular": false
+    },
+    {
+      "code": "CZK",
+      "name": "Czech Koruna",
+      "symbol": "Kč",
+      "flag": "🇨🇿",
+      "region": "Europe",
+      "rate": 23.35,
+      "popular": false
+    },
+    {
+      "code": "HUF",
+      "name": "Hungarian Forint",
+      "symbol": "Ft",
+      "flag": "🇭🇺",
+      "region": "Europe",
+      "rate": 365.5,
+      "popular": false
+    },
+    {
+      "code": "RON",
+      "name": "Romanian Leu",
+      "symbol": "lei",
+      "flag": "🇷🇴",
+      "region": "Europe",
+      "rate": 4.6,
+      "popular": false
+    },
+    {
+      "code": "BGN",
+      "name": "Bulgarian Lev",
+      "symbol": "лв",
+      "flag": "🇧🇬",
+      "region": "Europe",
+      "rate": 1.81,
+      "popular": false
+    },
+    {
+      "code": "ISK",
+      "name": "Icelandic Krona",
+      "symbol": "kr",
+      "flag": "🇮🇸",
+      "region": "Europe",
+      "rate": 139.2,
+      "popular": false
+    },
+    {
+      "code": "RSD",
+      "name": "Serbian Dinar",
+      "symbol": "дин",
+      "flag": "🇷🇸",
+      "region": "Europe",
+      "rate": 108.4,
+      "popular": false
+    },
+    {
+      "code": "UAH",
+      "name": "Ukrainian Hryvnia",
+      "symbol": "₴",
+      "flag": "🇺🇦",
+      "region": "Europe",
+      "rate": 41.25,
+      "popular": false
+    },
+    {
+      "code": "RUB",
+      "name": "Russian Ruble",
+      "symbol": "₽",
+      "flag": "🇷🇺",
+      "region": "Europe",
+      "rate": 89.5,
+      "popular": false
+    },
+    {
+      "code": "GEL",
+      "name": "Georgian Lari",
+      "symbol": "₾",
+      "flag": "🇬🇪",
+      "region": "Europe",
+      "rate": 2.72,
+      "popular": false
+    },
+    {
+      "code": "ALL",
+      "name": "Albanian Lek",
+      "symbol": "L",
+      "flag": "🇦🇱",
+      "region": "Europe",
+      "rate": 92.4,
+      "popular": false
+    },
+    {
+      "code": "BAM",
+      "name": "Bosnia-Herzegovina Convertible Mark",
+      "symbol": "KM",
+      "flag": "🇧🇦",
+      "region": "Europe",
+      "rate": 1.81,
+      "popular": false
+    },
+    {
+      "code": "MDL",
+      "name": "Moldovan Leu",
+      "symbol": "L",
+      "flag": "🇲🇩",
+      "region": "Europe",
+      "rate": 17.75,
+      "popular": false
+    },
+    {
+      "code": "MKD",
+      "name": "Macedonian Denar",
+      "symbol": "ден",
+      "flag": "🇲🇰",
+      "region": "Europe",
+      "rate": 56.9,
+      "popular": false
+    },
+    {
+      "code": "QAR",
+      "name": "Qatari Riyal",
+      "symbol": "ر.ق",
+      "flag": "🇶🇦",
+      "region": "Middle East",
+      "rate": 3.64,
+      "popular": false
+    },
+    {
+      "code": "KWD",
+      "name": "Kuwaiti Dinar",
+      "symbol": "د.ك",
+      "flag": "🇰🇼",
+      "region": "Middle East",
+      "rate": 0.306,
+      "popular": false
+    },
+    {
+      "code": "BHD",
+      "name": "Bahraini Dinar",
+      "symbol": ".د.ب",
+      "flag": "🇧🇭",
+      "region": "Middle East",
+      "rate": 0.376,
+      "popular": false
+    },
+    {
+      "code": "OMR",
+      "name": "Omani Rial",
+      "symbol": "ر.ع.",
+      "flag": "🇴🇲",
+      "region": "Middle East",
+      "rate": 0.385,
+      "popular": false
+    },
+    {
+      "code": "JOD",
+      "name": "Jordanian Dinar",
+      "symbol": "د.ا",
+      "flag": "🇯🇴",
+      "region": "Middle East",
+      "rate": 0.709,
+      "popular": false
+    },
+    {
+      "code": "ILS",
+      "name": "Israeli New Shekel",
+      "symbol": "₪",
+      "flag": "🇮🇱",
+      "region": "Middle East",
+      "rate": 3.72,
+      "popular": false
+    },
+    {
+      "code": "IQD",
+      "name": "Iraqi Dinar",
+      "symbol": "ع.د",
+      "flag": "🇮🇶",
+      "region": "Middle East",
+      "rate": 1310.0,
+      "popular": false
+    },
+    {
+      "code": "IRR",
+      "name": "Iranian Rial",
+      "symbol": "﷼",
+      "flag": "🇮🇷",
+      "region": "Middle East",
+      "rate": 42105.0,
+      "popular": false
+    },
+    {
+      "code": "LBP",
+      "name": "Lebanese Pound",
+      "symbol": "ل.ل",
+      "flag": "🇱🇧",
+      "region": "Middle East",
+      "rate": 89500.0,
+      "popular": false
+    },
+    {
+      "code": "KZT",
+      "name": "Kazakhstani Tenge",
+      "symbol": "₸",
+      "flag": "🇰🇿",
+      "region": "Asia",
+      "rate": 482.0,
+      "popular": false
+    },
+    {
+      "code": "UZS",
+      "name": "Uzbekistani Som",
+      "symbol": "so'm",
+      "flag": "🇺🇿",
+      "region": "Asia",
+      "rate": 12650.0,
+      "popular": false
+    },
+    {
+      "code": "AZN",
+      "name": "Azerbaijani Manat",
+      "symbol": "₼",
+      "flag": "🇦🇿",
+      "region": "Asia",
+      "rate": 1.7,
+      "popular": false
+    },
+    {
+      "code": "AMD",
+      "name": "Armenian Dram",
+      "symbol": "֏",
+      "flag": "🇦🇲",
+      "region": "Asia",
+      "rate": 387.5,
+      "popular": false
+    },
+    {
+      "code": "PKR",
+      "name": "Pakistani Rupee",
+      "symbol": "₨",
+      "flag": "🇵🇰",
+      "region": "Asia",
+      "rate": 278.5,
+      "popular": false
+    },
+    {
+      "code": "BDT",
+      "name": "Bangladeshi Taka",
+      "symbol": "৳",
+      "flag": "🇧🇩",
+      "region": "Asia",
+      "rate": 117.8,
+      "popular": false
+    },
+    {
+      "code": "LKR",
+      "name": "Sri Lankan Rupee",
+      "symbol": "Rs",
+      "flag": "🇱🇰",
+      "region": "Asia",
+      "rate": 302.5,
+      "popular": false
+    },
+    {
+      "code": "NPR",
+      "name": "Nepalese Rupee",
+      "symbol": "रू",
+      "flag": "🇳🇵",
+      "region": "Asia",
+      "rate": 134.3,
+      "popular": false
+    },
+    {
+      "code": "MVR",
+      "name": "Maldivian Rufiyaa",
+      "symbol": "Rf",
+      "flag": "🇲🇻",
+      "region": "Asia",
+      "rate": 15.42,
+      "popular": false
+    },
+    {
+      "code": "AFN",
+      "name": "Afghan Afghani",
+      "symbol": "؋",
+      "flag": "🇦🇫",
+      "region": "Asia",
+      "rate": 70.85,
+      "popular": false
+    },
+    {
+      "code": "MNT",
+      "name": "Mongolian Tugrik",
+      "symbol": "₮",
+      "flag": "🇲🇳",
+      "region": "Asia",
+      "rate": 3390.0,
+      "popular": false
+    },
+    {
+      "code": "CLP",
+      "name": "Chilean Peso",
+      "symbol": "CLP$",
+      "flag": "🇨🇱",
+      "region": "Americas",
+      "rate": 932.0,
+      "popular": false
+    },
+    {
+      "code": "COP",
+      "name": "Colombian Peso",
+      "symbol": "COL$",
+      "flag": "🇨🇴",
+      "region": "Americas",
+      "rate": 4050.0,
+      "popular": false
+    },
+    {
+      "code": "PEN",
+      "name": "Peruvian Sol",
+      "symbol": "S/.",
+      "flag": "🇵🇪",
+      "region": "Americas",
+      "rate": 3.74,
+      "popular": false
+    },
+    {
+      "code": "ARS",
+      "name": "Argentine Peso",
+      "symbol": "$",
+      "flag": "🇦🇷",
+      "region": "Americas",
+      "rate": 940.0,
+      "popular": false
+    },
+    {
+      "code": "UYU",
+      "name": "Uruguayan Peso",
+      "symbol": "$U",
+      "flag": "🇺🇾",
+      "region": "Americas",
+      "rate": 40.35,
+      "popular": false
+    },
+    {
+      "code": "PYG",
+      "name": "Paraguayan Guarani",
+      "symbol": "₲",
+      "flag": "🇵🇾",
+      "region": "Americas",
+      "rate": 7560.0,
+      "popular": false
+    },
+    {
+      "code": "BOB",
+      "name": "Bolivian Boliviano",
+      "symbol": "Bs",
+      "flag": "🇧🇴",
+      "region": "Americas",
+      "rate": 6.91,
+      "popular": false
+    },
+    {
+      "code": "CRC",
+      "name": "Costa Rican Colon",
+      "symbol": "₡",
+      "flag": "🇨🇷",
+      "region": "Americas",
+      "rate": 524.0,
+      "popular": false
+    },
+    {
+      "code": "DOP",
+      "name": "Dominican Peso",
+      "symbol": "RD$",
+      "flag": "🇩🇴",
+      "region": "Americas",
+      "rate": 59.3,
+      "popular": false
+    },
+    {
+      "code": "GTQ",
+      "name": "Guatemalan Quetzal",
+      "symbol": "Q",
+      "flag": "🇬🇹",
+      "region": "Americas",
+      "rate": 7.74,
+      "popular": false
+    },
+    {
+      "code": "HNL",
+      "name": "Honduran Lempira",
+      "symbol": "L",
+      "flag": "🇭🇳",
+      "region": "Americas",
+      "rate": 24.75,
+      "popular": false
+    },
+    {
+      "code": "NIO",
+      "name": "Nicaraguan Cordoba",
+      "symbol": "C$",
+      "flag": "🇳🇮",
+      "region": "Americas",
+      "rate": 36.85,
+      "popular": false
+    },
+    {
+      "code": "PAB",
+      "name": "Panamanian Balboa",
+      "symbol": "B/.",
+      "flag": "🇵🇦",
+      "region": "Americas",
+      "rate": 1.0,
+      "popular": false
+    },
+    {
+      "code": "JMD",
+      "name": "Jamaican Dollar",
+      "symbol": "J$",
+      "flag": "🇯🇲",
+      "region": "Americas",
+      "rate": 156.5,
+      "popular": false
+    },
+    {
+      "code": "TTD",
+      "name": "Trinidad and Tobago Dollar",
+      "symbol": "TT$",
+      "flag": "🇹🇹",
+      "region": "Americas",
+      "rate": 6.78,
+      "popular": false
+    },
+    {
+      "code": "BSD",
+      "name": "Bahamian Dollar",
+      "symbol": "B$",
+      "flag": "🇧🇸",
+      "region": "Americas",
+      "rate": 1.0,
+      "popular": false
+    },
+    {
+      "code": "BBD",
+      "name": "Barbadian Dollar",
+      "symbol": "Bds$",
+      "flag": "🇧🇧",
+      "region": "Americas",
+      "rate": 2.0,
+      "popular": false
+    },
+    {
+      "code": "BMD",
+      "name": "Bermudian Dollar",
+      "symbol": "BD$",
+      "flag": "🇧🇲",
+      "region": "Americas",
+      "rate": 1.0,
+      "popular": false
+    },
+    {
+      "code": "KYD",
+      "name": "Cayman Islands Dollar",
+      "symbol": "CI$",
+      "flag": "🇰🇾",
+      "region": "Americas",
+      "rate": 0.833,
+      "popular": false
+    },
+    {
+      "code": "XCD",
+      "name": "East Caribbean Dollar",
+      "symbol": "EC$",
+      "flag": "🇦🇬",
+      "region": "Americas",
+      "rate": 2.7,
+      "popular": false
+    },
+    {
+      "code": "EGP",
+      "name": "Egyptian Pound",
+      "symbol": "E£",
+      "flag": "🇪🇬",
+      "region": "Africa",
+      "rate": 48.65,
+      "popular": false
+    },
+    {
+      "code": "NGN",
+      "name": "Nigerian Naira",
+      "symbol": "₦",
+      "flag": "🇳🇬",
+      "region": "Africa",
+      "rate": 1585.0,
+      "popular": false
+    },
+    {
+      "code": "KES",
+      "name": "Kenyan Shilling",
+      "symbol": "KSh",
+      "flag": "🇰🇪",
+      "region": "Africa",
+      "rate": 129.5,
+      "popular": false
+    },
+    {
+      "code": "GHS",
+      "name": "Ghanaian Cedi",
+      "symbol": "GH₵",
+      "flag": "🇬🇭",
+      "region": "Africa",
+      "rate": 15.65,
+      "popular": false
+    },
+    {
+      "code": "MAD",
+      "name": "Moroccan Dirham",
+      "symbol": "د.م.",
+      "flag": "🇲🇦",
+      "region": "Africa",
+      "rate": 9.85,
+      "popular": false
+    },
+    {
+      "code": "DZD",
+      "name": "Algerian Dinar",
+      "symbol": "د.ج",
+      "flag": "🇩🇿",
+      "region": "Africa",
+      "rate": 134.2,
+      "popular": false
+    },
+    {
+      "code": "TND",
+      "name": "Tunisian Dinar",
+      "symbol": "د.ت",
+      "flag": "🇹🇳",
+      "region": "Africa",
+      "rate": 3.09,
+      "popular": false
+    },
+    {
+      "code": "UGX",
+      "name": "Ugandan Shilling",
+      "symbol": "USh",
+      "flag": "🇺🇬",
+      "region": "Africa",
+      "rate": 3720.0,
+      "popular": false
+    },
+    {
+      "code": "TZS",
+      "name": "Tanzanian Shilling",
+      "symbol": "TSh",
+      "flag": "🇹🇿",
+      "region": "Africa",
+      "rate": 2715.0,
+      "popular": false
+    },
+    {
+      "code": "ETB",
+      "name": "Ethiopian Birr",
+      "symbol": "Br",
+      "flag": "🇪🇹",
+      "region": "Africa",
+      "rate": 105.0,
+      "popular": false
+    },
+    {
+      "code": "MUR",
+      "name": "Mauritian Rupee",
+      "symbol": "₨",
+      "flag": "🇲🇺",
+      "region": "Africa",
+      "rate": 46.5,
+      "popular": false
+    },
+    {
+      "code": "BWP",
+      "name": "Botswanan Pula",
+      "symbol": "P",
+      "flag": "🇧🇼",
+      "region": "Africa",
+      "rate": 13.55,
+      "popular": false
+    },
+    {
+      "code": "NAD",
+      "name": "Namibian Dollar",
+      "symbol": "N$",
+      "flag": "🇳🇦",
+      "region": "Africa",
+      "rate": 18.25,
+      "popular": false
+    },
+    {
+      "code": "ZMW",
+      "name": "Zambian Kwacha",
+      "symbol": "ZK",
+      "flag": "🇿🇲",
+      "region": "Africa",
+      "rate": 26.2,
+      "popular": false
+    },
+    {
+      "code": "XOF",
+      "name": "West African CFA Franc",
+      "symbol": "CFA",
+      "flag": "🇸🇳",
+      "region": "Africa",
+      "rate": 606.8,
+      "popular": false
+    },
+    {
+      "code": "XAF",
+      "name": "Central African CFA Franc",
+      "symbol": "FCFA",
+      "flag": "🇨🇲",
+      "region": "Africa",
+      "rate": 606.8,
+      "popular": false
+    },
+    {
+      "code": "FJD",
+      "name": "Fijian Dollar",
+      "symbol": "FJ$",
+      "flag": "🇫🇯",
+      "region": "Oceania",
+      "rate": 2.25,
+      "popular": false
+    },
+    {
+      "code": "PGK",
+      "name": "Papua New Guinean Kina",
+      "symbol": "K",
+      "flag": "🇵🇬",
+      "region": "Oceania",
+      "rate": 3.9,
+      "popular": false
+    },
+    {
+      "code": "WST",
+      "name": "Samoan Tala",
+      "symbol": "WS$",
+      "flag": "🇼🇸",
+      "region": "Oceania",
+      "rate": 2.76,
+      "popular": false
+    },
+    {
+      "code": "TOP",
+      "name": "Tongan Paʻanga",
+      "symbol": "T$",
+      "flag": "🇹🇴",
+      "region": "Oceania",
+      "rate": 2.37,
+      "popular": false
+    },
+    {
+      "code": "VUV",
+      "name": "Vanuatu Vatu",
+      "symbol": "VT",
+      "flag": "🇻🇺",
+      "region": "Oceania",
+      "rate": 119.5,
+      "popular": false
+    },
+    {
+      "code": "XAU",
+      "name": "Gold Troy Ounce",
+      "symbol": "oz t",
+      "flag": "🪙",
+      "region": "Commodities",
+      "rate": 0.000405,
+      "popular": true
+    },
+    {
+      "code": "XAG",
+      "name": "Silver Troy Ounce",
+      "symbol": "oz t",
+      "flag": "🥈",
+      "region": "Commodities",
+      "rate": 0.0345,
+      "popular": true
+    },
+    {
+      "code": "XPT",
+      "name": "Platinum Troy Ounce",
+      "symbol": "oz t",
+      "flag": "⚪",
+      "region": "Commodities",
+      "rate": 0.00105,
+      "popular": false
+    },
+    {
+      "code": "XPD",
+      "name": "Palladium Troy Ounce",
+      "symbol": "oz t",
+      "flag": "🔘",
+      "region": "Commodities",
+      "rate": 0.00108,
+      "popular": false
+    },
+    {
+      "code": "BTC",
+      "name": "Bitcoin",
+      "symbol": "₿",
+      "flag": "🪙",
+      "region": "Crypto",
+      "rate": 1.55e-05,
+      "popular": true
+    },
+    {
+      "code": "ETH",
+      "name": "Ethereum",
+      "symbol": "Ξ",
+      "flag": "💎",
+      "region": "Crypto",
+      "rate": 0.000375,
+      "popular": true
+    },
+    {
+      "code": "SOL",
+      "name": "Solana",
+      "symbol": "◎",
+      "flag": "🟣",
+      "region": "Crypto",
+      "rate": 0.00685,
+      "popular": true
+    },
+    {
+      "code": "BNB",
+      "name": "BNB",
+      "symbol": "BNB",
+      "flag": "🟡",
+      "region": "Crypto",
+      "rate": 0.00174,
+      "popular": true
+    },
+    {
+      "code": "XRP",
+      "name": "XRP",
+      "symbol": "XRP",
+      "flag": "✕",
+      "region": "Crypto",
+      "rate": 1.724,
+      "popular": true
+    },
+    {
+      "code": "DOGE",
+      "name": "Dogecoin",
+      "symbol": "Ð",
+      "flag": "🐕",
+      "region": "Crypto",
+      "rate": 9.45,
+      "popular": false
+    },
+    {
+      "code": "ADA",
+      "name": "Cardano",
+      "symbol": "₳",
+      "flag": "🔵",
+      "region": "Crypto",
+      "rate": 2.82,
+      "popular": false
+    },
+    {
+      "code": "USDT",
+      "name": "Tether USD",
+      "symbol": "₮",
+      "flag": "💵",
+      "region": "Crypto",
+      "rate": 1.0,
+      "popular": true
+    },
+    {
+      "code": "USDC",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "flag": "💳",
+      "region": "Crypto",
+      "rate": 1.0,
+      "popular": false
+    }
+  ]
+}

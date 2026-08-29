@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Glow Circle -->
+    <path
+        android:fillColor="#3A86FF"
+        android:fillAlpha="0.15"
+        android:pathData="M54,20 A34,34 0 1,0 54,88 A34,34 0 1,0 54,20 Z" />
+    <path
+        android:strokeColor="#3A86FF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,26 A28,28 0 1,0 54,82 A28,28 0 1,0 54,26 Z" />
+
+    <!-- Currency Exchange Arrows & Symbol -->
+    <!-- Curved Top Arrow -->
+    <path
+        android:strokeColor="#00F0FF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M38,38 A20,20 0 0,1 70,38" />
+    <path
+        android:fillColor="#00F0FF"
+        android:pathData="M67,32 L75,39 L67,46 Z" />
+
+    <!-- Curved Bottom Arrow -->
+    <path
+        android:strokeColor="#FFBE0B"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M70,70 A20,20 0 0,1 38,70" />
+    <path
+        android:fillColor="#FFBE0B"
+        android:pathData="M41,76 L33,69 L41,62 Z" />
+
+    <!-- Center Currency Symbol '$' -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M54,44 L54,64 M48,48 C48,45 60,45 60,51 C60,57 48,51 48,57 C48,63 60,63 60,60" />
+</vector>
