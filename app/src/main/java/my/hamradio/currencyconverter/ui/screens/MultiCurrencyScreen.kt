@@ -4,7 +4,6 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,6 +12,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Edit
@@ -24,9 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -36,7 +39,6 @@ import my.hamradio.currencyconverter.data.model.Currency
 import my.hamradio.currencyconverter.ui.CurrencyPickerMode
 import my.hamradio.currencyconverter.ui.MainUiState
 import my.hamradio.currencyconverter.ui.MainViewModel
-import my.hamradio.currencyconverter.ui.components.CalculatorKeypad
 import my.hamradio.currencyconverter.ui.components.QuickAmountChips
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,6 +49,7 @@ fun MultiCurrencyScreen(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
+    val focusManager = LocalFocusManager.current
     var searchQuery by remember { mutableStateOf("") }
     var selectedRegion by remember { mutableStateOf("All") }
 
@@ -89,7 +92,7 @@ fun MultiCurrencyScreen(
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                // Top Row: Base Currency Selector Button & Keyboard toggle
+                // Top Row: Base Currency Selector Button & Name
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -120,46 +123,89 @@ fun MultiCurrencyScreen(
                         }
                     }
 
-                    IconButton(
-                        onClick = { viewModel.toggleNumpadVisibility() }
-                    ) {
-                        Icon(
-                            imageVector = if (uiState.isNumpadVisible) Icons.Default.KeyboardHide else Icons.Default.Dialpad,
-                            contentDescription = "Toggle Keypad",
-                            tint = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(10.dp))
-
-                // Amount Display with Formula evaluation
-                Column(modifier = Modifier.fillMaxWidth()) {
                     Text(
-                        text = if (uiState.inputExpression.isBlank()) "0" else uiState.inputExpression,
-                        style = MaterialTheme.typography.displayLarge.copy(
-                            fontSize = if (uiState.inputExpression.length > 10) 26.sp else 34.sp
-                        ),
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onBackground,
+                        text = uiState.baseCurrency.name,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
+                }
 
-                    if (uiState.inputExpression.contains("+") ||
-                        uiState.inputExpression.contains("-") ||
-                        uiState.inputExpression.contains("×") ||
-                        uiState.inputExpression.contains("÷") ||
-                        uiState.inputExpression.contains("*") ||
-                        uiState.inputExpression.contains("/")
-                    ) {
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Editable Amount Input Field with system numeric keyboard
+                OutlinedTextField(
+                    value = uiState.inputExpression,
+                    onValueChange = { newVal ->
+                        if (newVal.all { it.isDigit() || it == '.' || it == ',' || it in "+-*/ " }) {
+                            viewModel.setInputExpression(newVal.replace(',', '.'))
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    textStyle = MaterialTheme.typography.headlineMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    ),
+                    leadingIcon = {
                         Text(
-                            text = "= ${uiState.baseCurrency.symbol} ${viewModel.formatValue(uiState.evaluatedAmount)}",
-                            style = MaterialTheme.typography.titleMedium,
+                            text = uiState.baseCurrency.symbol,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.primary,
-                            fontWeight = FontWeight.SemiBold
+                            modifier = Modifier.padding(start = 12.dp)
                         )
-                    }
+                    },
+                    trailingIcon = {
+                        if (uiState.inputExpression.isNotEmpty() && uiState.inputExpression != "0") {
+                            IconButton(onClick = { viewModel.setInputExpression("") }) {
+                                Icon(
+                                    imageVector = Icons.Default.Close,
+                                    contentDescription = "Clear Amount",
+                                    tint = MaterialTheme.colorScheme.outline
+                                )
+                            }
+                        }
+                    },
+                    placeholder = {
+                        Text(
+                            text = "0",
+                            style = MaterialTheme.typography.headlineMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f)
+                        )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Decimal,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = { focusManager.clearFocus() }
+                    ),
+                    shape = RoundedCornerShape(14.dp),
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = MaterialTheme.colorScheme.surface,
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.7f),
+                        focusedBorderColor = MaterialTheme.colorScheme.primary,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f)
+                    )
+                )
+
+                if (uiState.inputExpression.contains("+") ||
+                    uiState.inputExpression.contains("-") ||
+                    uiState.inputExpression.contains("×") ||
+                    uiState.inputExpression.contains("÷") ||
+                    uiState.inputExpression.contains("*") ||
+                    uiState.inputExpression.contains("/")
+                ) {
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "= ${uiState.baseCurrency.symbol} ${viewModel.formatValue(uiState.evaluatedAmount)}",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.SemiBold
+                    )
                 }
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -182,25 +228,36 @@ fun MultiCurrencyScreen(
             OutlinedTextField(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(48.dp),
-                placeholder = { Text(stringResource(R.string.search_currencies), fontSize = 13.sp) },
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, modifier = Modifier.size(18.dp)) },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = {
+                    Text(
+                        text = stringResource(R.string.search_currencies),
+                        style = MaterialTheme.typography.bodyMedium,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                },
                 trailingIcon = {
                     if (searchQuery.isNotEmpty()) {
                         IconButton(onClick = { searchQuery = "" }) {
-                            Icon(Icons.Default.Close, contentDescription = "Clear", modifier = Modifier.size(16.dp))
+                            Icon(Icons.Default.Close, contentDescription = "Clear", modifier = Modifier.size(18.dp))
                         }
                     }
                 },
-                shape = RoundedCornerShape(12.dp),
+                shape = RoundedCornerShape(14.dp),
                 singleLine = true,
-                colors = TextFieldDefaults.colors(
-                    focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.35f),
                     unfocusedContainerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.2f),
-                    focusedIndicatorColor = MaterialTheme.colorScheme.primary,
-                    unfocusedIndicatorColor = Color.Transparent
+                    focusedBorderColor = MaterialTheme.colorScheme.primary,
+                    unfocusedBorderColor = Color.Transparent
                 )
             )
         }
@@ -279,21 +336,6 @@ fun MultiCurrencyScreen(
                     }
                 )
             }
-        }
-
-        // Bottom Calculator Keypad (collapsible)
-        AnimatedVisibility(
-            visible = uiState.isNumpadVisible,
-            enter = slideInVertically(initialOffsetY = { it }) + fadeIn(),
-            exit = slideOutVertically(targetOffsetY = { it }) + fadeOut()
-        ) {
-            CalculatorKeypad(
-                onDigit = { viewModel.onDigitPressed(it) },
-                onOperator = { viewModel.onOperatorPressed(it) },
-                onClear = { viewModel.onClearPressed() },
-                onBackspace = { viewModel.onBackspacePressed() },
-                onEquals = { viewModel.onEqualsPressed() }
-            )
         }
     }
 }

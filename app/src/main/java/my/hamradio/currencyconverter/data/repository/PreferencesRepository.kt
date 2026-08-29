@@ -24,7 +24,12 @@ class PreferencesRepository(context: Context) {
         private const val KEY_SHOPPING_ITEMS = "shopping_items"
         private const val KEY_LAST_UPDATED = "last_updated_timestamp"
         private const val KEY_ONLINE_RATES = "online_rates"
+        private const val KEY_AUTO_UPDATE = "auto_update_rates"
     }
+
+    var isAutoUpdateEnabled: Boolean
+        get() = prefs.getBoolean(KEY_AUTO_UPDATE, true)
+        set(value) = prefs.edit().putBoolean(KEY_AUTO_UPDATE, value).apply()
 
     var appTheme: AppThemeSetting
         get() {

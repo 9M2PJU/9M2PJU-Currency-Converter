@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">9M2PJU-Currency</string>
-    <string name="app_full_title">9M2PJU-Currency - Penukar Mata Wang Luar Talian</string>
+    <string name="app_name">9M2PJU Currency App</string>
+    <string name="app_full_title">9M2PJU Currency App - Penukar Mata Wang Luar Talian</string>
     <string name="app_subtitle">Aplikasi Kewangan Pelbagai Mata Wang Luar Talian 100%</string>
     
     <!-- Navigation Tabs -->
@@ -66,6 +66,11 @@
     
     <!-- Settings & Custom Rates -->
     <string name="settings_title">Keutamaan &amp; Kadar Pertukaran</string>
+    <string name="rates_update_title">Kadar &amp; Penyelarasan</string>
+    <string name="auto_update_rates">Kemaskini Automatik Kadar</string>
+    <string name="auto_update_desc">Dapatkan kadar pertukaran terkini secara automatik semasa aplikasi dibuka jika ada sambungan internet</string>
+    <string name="update_rates_now">Kemaskini Kadar Sekarang</string>
+    <string name="check_app_updates">Semak Kemaskini Aplikasi</string>
     <string name="custom_rates_title">Pengurus Kadar Tersuai</string>
     <string name="edit_custom_rate">Sunting Kadar Pertukaran</string>
     <string name="enter_custom_rate">Masukkan kadar bagi 1 USD</string>
@@ -83,7 +88,7 @@
     <string name="precision_2">2 Titik Perpuluhan (Biasa)</string>
     <string name="precision_4">4 Titik Perpuluhan (Forex)</string>
     <string name="precision_6">6 Titik Perpuluhan (Kripto / Ketepatan Tinggi)</string>
-    <string name="about_title">Mengenai 9M2PJU-Currency</string>
+    <string name="about_title">Mengenai 9M2PJU Currency App</string>
     <string name="developer_info">Dibangunkan oleh 9M2PJU</string>
     <string name="offline_guarantee">100% Beroperasi Luar Talian • Tiada Penjejakan Data • Pengiraan Pantas</string>
     <string name="version_label">Versi %1$s</string>

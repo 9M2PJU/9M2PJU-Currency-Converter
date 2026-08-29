@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "9M2PJU-Currency"
+rootProject.name = "9M2PJU Currency App"
 include(":app")

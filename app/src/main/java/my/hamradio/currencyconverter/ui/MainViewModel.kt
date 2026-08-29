@@ -25,6 +25,7 @@ data class MainUiState(
     val isNumpadVisible: Boolean = true,
     val appTheme: AppThemeSetting = AppThemeSetting.SYSTEM,
     val decimalPrecision: Int = 2,
+    val isAutoUpdateEnabled: Boolean = true,
     val lastUpdatedText: String = "",
     val isSyncing: Boolean = false,
     val syncMessage: String? = null,
@@ -67,6 +68,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val precision = preferencesRepository.decimalPrecision
         val lastUpdated = preferencesRepository.lastUpdatedText
         val shopping = preferencesRepository.getShoppingItems()
+        val autoUpdate = preferencesRepository.isAutoUpdateEnabled
 
         _uiState.update { current ->
             current.copy(
@@ -76,10 +78,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 appTheme = theme,
                 decimalPrecision = precision,
                 lastUpdatedText = lastUpdated,
-                shoppingItems = shopping
+                shoppingItems = shopping,
+                isAutoUpdateEnabled = autoUpdate
             )
         }
         updateTrends()
+
+        if (autoUpdate) {
+            syncLiveRates(isSilent = true)
+        }
     }
 
     fun setInputExpression(expr: String) {
@@ -203,7 +210,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _uiState.update { it.copy(trendPoints = points) }
     }
 
-    fun syncLiveRates() {
+    fun setAutoUpdate(enabled: Boolean) {
+        preferencesRepository.isAutoUpdateEnabled = enabled
+        _uiState.update { it.copy(isAutoUpdateEnabled = enabled) }
+    }
+
+    fun syncLiveRates(isSilent: Boolean = false) {
         viewModelScope.launch {
             _uiState.update { it.copy(isSyncing = true, syncMessage = null) }
             val result = currencyRepository.syncLiveRates()
@@ -215,7 +227,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                         currencies = all,
                         lastUpdatedText = lastUpdated,
                         isSyncing = false,
-                        syncMessage = "Updated $count rates successfully!"
+                        syncMessage = if (!isSilent) "Updated $count rates successfully!" else null
                     )
                 }
                 updateTrends()
@@ -223,7 +235,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 _uiState.update {
                     it.copy(
                         isSyncing = false,
-                        syncMessage = "Offline mode. Cached rates are active."
+                        syncMessage = if (!isSilent) "Offline mode. Cached rates are active." else null
                     )
                 }
             }

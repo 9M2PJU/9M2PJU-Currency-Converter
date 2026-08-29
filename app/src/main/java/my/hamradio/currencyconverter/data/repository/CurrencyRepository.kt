@@ -185,7 +185,7 @@ class CurrencyRepository(
                 connectTimeout = 8000
                 readTimeout = 8000
                 requestMethod = "GET"
-                setRequestProperty("User-Agent", "9M2PJU-Currency/1.0")
+                setRequestProperty("User-Agent", "9M2PJU-Currency-App/1.0")
             }
 
             if (connection.responseCode == 200) {

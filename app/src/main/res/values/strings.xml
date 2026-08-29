@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">9M2PJU-Currency</string>
-    <string name="app_full_title">9M2PJU-Currency - Offline Currencies Converter</string>
+    <string name="app_name">9M2PJU Currency App</string>
+    <string name="app_full_title">9M2PJU Currency App - Offline Currencies Converter</string>
     <string name="app_subtitle">100% Offline Multi-Currency &amp; Travel Finance Suite</string>
     
     <!-- Navigation Tabs -->
@@ -66,6 +66,11 @@
     
     <!-- Settings & Custom Rates -->
     <string name="settings_title">Preferences &amp; Rates</string>
+    <string name="rates_update_title">Rates &amp; Synchronization</string>
+    <string name="auto_update_rates">Auto-Update Rates</string>
+    <string name="auto_update_desc">Automatically fetch latest live rates on startup when internet is available</string>
+    <string name="update_rates_now">Update Rates Now</string>
+    <string name="check_app_updates">Check for App Updates</string>
     <string name="custom_rates_title">Custom Rates Manager</string>
     <string name="edit_custom_rate">Edit Exchange Rate</string>
     <string name="enter_custom_rate">Enter rate against 1 USD</string>
@@ -83,7 +88,7 @@
     <string name="precision_2">2 Decimal Places (Standard)</string>
     <string name="precision_4">4 Decimal Places (Forex)</string>
     <string name="precision_6">6 Decimal Places (Crypto / High Precision)</string>
-    <string name="about_title">About 9M2PJU-Currency</string>
+    <string name="about_title">About 9M2PJU Currency App</string>
     <string name="developer_info">Crafted by 9M2PJU</string>
     <string name="offline_guarantee">100% Offline-Capable • No Data Tracking • Instant Math</string>
     <string name="version_label">Version %1$s</string>

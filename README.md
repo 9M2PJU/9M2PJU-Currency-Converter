@@ -1,7 +1,7 @@
-# 9M2PJU-Currency — Modern Offline Multi-Currency & Travel Finance Suite
+# 9M2PJU Currency App — Modern Offline Multi-Currency & Travel Finance Suite
 
 <p align="center">
-  <img src="app/src/main/res/drawable/ic_launcher_foreground.xml" width="128" height="128" alt="9M2PJU-Currency Logo" />
+  <img src="app/src/main/res/drawable/ic_launcher_foreground.xml" width="128" height="128" alt="9M2PJU Currency App Logo" />
 </p>
 
 <p align="center">
@@ -20,9 +20,9 @@
 
 ## 🌟 Highlights
 
-**9M2PJU-Currency** is a modern, professional, offline-first Android currency converter and travel finance suite built with **Kotlin 2.0**, **Jetpack Compose**, and **Material Design 3**.
+**9M2PJU Currency App** is a modern, professional, offline-first Android currency converter and travel finance suite built with **Kotlin 2.0**, **Jetpack Compose**, and **Material Design 3**.
 
-Designed specifically for international travelers, traders, and privacy-conscious users, 9M2PJU-Currency works completely offline without requiring roaming data or network connectivity.
+Designed specifically for international travelers, traders, and privacy-conscious users, 9M2PJU Currency App works completely offline without requiring roaming data or network connectivity.
 
 ---
 
@@ -77,7 +77,7 @@ Designed specifically for international travelers, traders, and privacy-consciou
 
 ## 📲 Installation
 
-1. Download the latest signed release APK: [`9M2PJU-Currency-v1.0.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest)
+1. Download the latest signed release APK: [`9M2PJU-Currency-App-v1.1.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest)
 2. Open the `.apk` file on your Android device (Android 8.0 Oreo or higher).
 3. Enjoy an ultra-fast, privacy-first offline currency converter.
 
