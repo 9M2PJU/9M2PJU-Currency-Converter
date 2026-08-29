@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">CurrencyX</string>
-    <string name="app_full_title">CurrencyX - Offline Currencies Converter</string>
+    <string name="app_name">9M2PJU-Currency</string>
+    <string name="app_full_title">9M2PJU-Currency - Offline Currencies Converter</string>
     <string name="app_subtitle">100% Offline Multi-Currency &amp; Travel Finance Suite</string>
     
     <!-- Navigation Tabs -->
@@ -83,7 +83,7 @@
     <string name="precision_2">2 Decimal Places (Standard)</string>
     <string name="precision_4">4 Decimal Places (Forex)</string>
     <string name="precision_6">6 Decimal Places (Crypto / High Precision)</string>
-    <string name="about_title">About CurrencyX</string>
+    <string name="about_title">About 9M2PJU-Currency</string>
     <string name="developer_info">Crafted by 9M2PJU</string>
     <string name="offline_guarantee">100% Offline-Capable • No Data Tracking • Instant Math</string>
     <string name="version_label">Version %1$s</string>

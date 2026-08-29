@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OfflineCurrenciesConverter"
+rootProject.name = "9M2PJU-Currency"
 include(":app")

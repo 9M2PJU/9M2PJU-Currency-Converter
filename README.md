@@ -1,7 +1,7 @@
-# CurrencyX — Modern Offline Multi-Currency & Travel Finance Suite
+# 9M2PJU-Currency — Modern Offline Multi-Currency & Travel Finance Suite
 
 <p align="center">
-  <img src="app/src/main/res/drawable/ic_launcher_foreground.xml" width="128" height="128" alt="CurrencyX Logo" />
+  <img src="app/src/main/res/drawable/ic_launcher_foreground.xml" width="128" height="128" alt="9M2PJU-Currency Logo" />
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/9M2PJU/9M2PJU-Offline-Currencies-Converter/releases/latest"><img src="https://img.shields.io/github/v/release/9M2PJU/9M2PJU-Offline-Currencies-Converter?color=blue&style=flat-square" alt="Latest Release" /></a>
+  <a href="https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest"><img src="https://img.shields.io/github/v/release/9M2PJU/9M2PJU-Currency-Converter?color=blue&style=flat-square" alt="Latest Release" /></a>
   <img src="https://img.shields.io/badge/Platform-Android%208.0%2B-brightgreen?style=flat-square" alt="Platform" />
   <img src="https://img.shields.io/badge/Language-Kotlin%202.0-purple?style=flat-square" alt="Kotlin" />
   <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-navy?style=flat-square" alt="Compose" />
@@ -20,9 +20,9 @@
 
 ## 🌟 Highlights
 
-**CurrencyX** is a modern, professional, offline-first Android currency converter and travel finance suite built with **Kotlin 2.0**, **Jetpack Compose**, and **Material Design 3**.
+**9M2PJU-Currency** is a modern, professional, offline-first Android currency converter and travel finance suite built with **Kotlin 2.0**, **Jetpack Compose**, and **Material Design 3**.
 
-Designed specifically for international travelers, traders, and privacy-conscious users, CurrencyX works completely offline without requiring roaming data or network connectivity.
+Designed specifically for international travelers, traders, and privacy-conscious users, 9M2PJU-Currency works completely offline without requiring roaming data or network connectivity.
 
 ---
 
@@ -77,7 +77,7 @@ Designed specifically for international travelers, traders, and privacy-consciou
 
 ## 📲 Installation
 
-1. Download the latest signed release APK: [`CurrencyX-v1.0.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Offline-Currencies-Converter/releases/latest)
+1. Download the latest signed release APK: [`9M2PJU-Currency-v1.0.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest)
 2. Open the `.apk` file on your Android device (Android 8.0 Oreo or higher).
 3. Enjoy an ultra-fast, privacy-first offline currency converter.
 

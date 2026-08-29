@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">CurrencyX</string>
-    <string name="app_full_title">CurrencyX - Penukar Mata Wang Luar Talian</string>
+    <string name="app_name">9M2PJU-Currency</string>
+    <string name="app_full_title">9M2PJU-Currency - Penukar Mata Wang Luar Talian</string>
     <string name="app_subtitle">Aplikasi Kewangan Pelbagai Mata Wang Luar Talian 100%</string>
     
     <!-- Navigation Tabs -->
@@ -83,7 +83,7 @@
     <string name="precision_2">2 Titik Perpuluhan (Biasa)</string>
     <string name="precision_4">4 Titik Perpuluhan (Forex)</string>
     <string name="precision_6">6 Titik Perpuluhan (Kripto / Ketepatan Tinggi)</string>
-    <string name="about_title">Mengenai CurrencyX</string>
+    <string name="about_title">Mengenai 9M2PJU-Currency</string>
     <string name="developer_info">Dibangunkan oleh 9M2PJU</string>
     <string name="offline_guarantee">100% Beroperasi Luar Talian • Tiada Penjejakan Data • Pengiraan Pantas</string>
     <string name="version_label">Versi %1$s</string>
