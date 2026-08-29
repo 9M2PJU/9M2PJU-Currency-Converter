@@ -73,6 +73,15 @@
     <string name="add_to_trip_list">Add to Trip Expense</string>
     <string name="trip_expenses">Trip Expenses</string>
     <string name="clear_trip_list">Clear List</string>
+    <string name="scan_price_tag">Scan Price Tag (Camera)</string>
+    <string name="camera_scanner_title">Live Price Tag Scanner</string>
+    <string name="camera_permission_required">Camera permission is required to scan price tags.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="scanning_hint">Align price tag within frame</string>
+    <string name="detected_price">Detected Price</string>
+    <string name="use_this_price">Use This Price</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="rescan">Rescan</string>
     <string name="grand_total">Trip Grand Total</string>
     
     <!-- Trends -->

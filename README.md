@@ -45,15 +45,20 @@ Designed specifically for international travelers, traders, and privacy-consciou
 - **Tip & Split Bill Calculator**: Calculate tip percentages (presets + slider), split bills among 1–30 people, with cash round-up options.
 - **Export & Share CSV**: Share formatted expense summaries and CSV reports via any messaging app or email.
 
-### 📈 4. Historical Trends & Interactive Charting
+### 📸 4. Live Camera Price Tag Scanner (On-Device OCR)
+- **Point & Convert**: Point your phone camera at physical price tags, restaurant menus, or receipts abroad.
+- **On-Device ML Kit OCR**: Analyzes numbers and price tags in real time completely offline with 0 network latency.
+- **Instant Overlay Conversion**: Live visual preview showing foreign price and converted home currency amount, with a 1-tap button to transfer the price into the converter or expense cart.
+
+### 📈 5. Historical Trends & Interactive Charting
 - **Touch-Interactive Canvas Curve**: Smooth bezier curve chart with hover tooltip across **7D, 30D, 90D, and 1 Year** intervals.
 - **Forex Statistics**: High, Low, Average, and Volatility % indicators.
 
-### 📱 5. Home Screen Widget & System Integration
+### 📱 6. Home Screen Widget & System Integration
 - **Android App Widget**: Glance at top pinned currency rates directly from your home screen.
 - **Text Selection Conversion**: Highlight price text in any app (Chrome, Notes, WhatsApp) and tap *"Convert with 9M2PJU"*.
 
-### ⚙️ 6. Offline Custom Rates, Multi-API Redundancy & Backup
+### ⚙️ 7. Offline Custom Rates, Multi-API Redundancy & Backup
 - **Custom Rate Overrides**: Customize exchange rates for any currency.
 - **Multi-Source Redundancy**: Automatic fallback across multiple open rate providers.
 - **Full Backup & Restore**: Export/import settings, custom rates, and trip history as JSON.
@@ -83,7 +88,7 @@ Designed specifically for international travelers, traders, and privacy-consciou
 
 ## 📲 Installation
 
-1. Download the latest signed release APK: [`9M2PJU-Currency-App-v1.1.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest)
+1. Download the latest signed release APK: [`9M2PJU-Currency-App-v1.3.0-release.apk`](https://github.com/9M2PJU/9M2PJU-Currency-Converter/releases/latest)
 2. Open the `.apk` file on your Android device (Android 8.0 Oreo or higher).
 3. Enjoy an ultra-fast, privacy-first offline currency converter.
 

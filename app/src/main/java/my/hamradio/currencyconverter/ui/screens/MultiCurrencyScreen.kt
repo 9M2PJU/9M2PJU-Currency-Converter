@@ -16,6 +16,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.DocumentScanner
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.material3.*
@@ -39,6 +40,7 @@ import my.hamradio.currencyconverter.data.model.Currency
 import my.hamradio.currencyconverter.ui.CurrencyPickerMode
 import my.hamradio.currencyconverter.ui.MainUiState
 import my.hamradio.currencyconverter.ui.MainViewModel
+import my.hamradio.currencyconverter.ui.components.CameraPriceScannerDialog
 import my.hamradio.currencyconverter.ui.components.QuickAmountChips
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,6 +54,7 @@ fun MultiCurrencyScreen(
     val focusManager = LocalFocusManager.current
     var searchQuery by remember { mutableStateOf("") }
     var selectedRegion by remember { mutableStateOf("All") }
+    var showCameraScanner by remember { mutableStateOf(false) }
 
     val regions = listOf("All", "Favorites", "Southeast Asia", "Asia", "Europe", "Americas", "Middle East", "Africa", "Oceania", "Crypto", "Commodities")
 
@@ -157,12 +160,21 @@ fun MultiCurrencyScreen(
                         )
                     },
                     trailingIcon = {
-                        if (uiState.inputExpression.isNotEmpty() && uiState.inputExpression != "0") {
-                            IconButton(onClick = { viewModel.setInputExpression("") }) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            if (uiState.inputExpression.isNotEmpty() && uiState.inputExpression != "0") {
+                                IconButton(onClick = { viewModel.setInputExpression("") }) {
+                                    Icon(
+                                        imageVector = Icons.Default.Close,
+                                        contentDescription = "Clear Amount",
+                                        tint = MaterialTheme.colorScheme.outline
+                                    )
+                                }
+                            }
+                            IconButton(onClick = { showCameraScanner = true }) {
                                 Icon(
-                                    imageVector = Icons.Default.Close,
-                                    contentDescription = "Clear Amount",
-                                    tint = MaterialTheme.colorScheme.outline
+                                    imageVector = Icons.Outlined.DocumentScanner,
+                                    contentDescription = "Scan Price Tag",
+                                    tint = MaterialTheme.colorScheme.primary
                                 )
                             }
                         }
@@ -336,6 +348,21 @@ fun MultiCurrencyScreen(
                     }
                 )
             }
+        }
+
+        if (showCameraScanner) {
+            CameraPriceScannerDialog(
+                foreignCurrency = uiState.baseCurrency,
+                homeCurrency = uiState.targetCurrency,
+                convertAmount = { amt, from, to -> viewModel.convertAmount(amt, from, to) },
+                formatValue = { amt -> viewModel.formatValue(amt) },
+                onPriceSelected = { detectedPrice ->
+                    val formatted = viewModel.formatValue(detectedPrice).replace(",", "")
+                    viewModel.setInputExpression(formatted)
+                    showCameraScanner = false
+                },
+                onDismiss = { showCameraScanner = false }
+            )
         }
     }
 }

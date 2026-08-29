@@ -33,6 +33,7 @@ import my.hamradio.currencyconverter.data.model.ShoppingItem
 import my.hamradio.currencyconverter.ui.CurrencyPickerMode
 import my.hamradio.currencyconverter.ui.MainUiState
 import my.hamradio.currencyconverter.ui.MainViewModel
+import my.hamradio.currencyconverter.ui.components.CameraPriceScannerDialog
 import kotlin.math.ceil
 
 enum class TravelTab {
@@ -48,6 +49,10 @@ fun TravelCalculatorScreen(
 ) {
     val context = LocalContext.current
     var currentTab by remember { mutableStateOf(TravelTab.BUDGET_CART) }
+
+    // Camera OCR Scanner state
+    var showCameraScanner by remember { mutableStateOf(false) }
+    var scannerTargetIsBill by remember { mutableStateOf(false) }
 
     // Shopping / Budget inputs
     var itemName by remember { mutableStateOf("") }
@@ -291,6 +296,20 @@ fun TravelCalculatorScreen(
                                     placeholder = { Text(stringResource(R.string.foreign_price)) },
                                     prefix = { Text("${foreignCurrency.symbol} ", fontWeight = FontWeight.SemiBold) },
                                     suffix = { Text(foreignCurrency.code, fontWeight = FontWeight.Medium) },
+                                    trailingIcon = {
+                                        IconButton(
+                                            onClick = {
+                                                scannerTargetIsBill = false
+                                                showCameraScanner = true
+                                            }
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Outlined.DocumentScanner,
+                                                contentDescription = "Scan Price Tag",
+                                                tint = MaterialTheme.colorScheme.primary
+                                            )
+                                        }
+                                    },
                                     singleLine = true,
                                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                                     shape = RoundedCornerShape(12.dp),
@@ -524,6 +543,20 @@ fun TravelCalculatorScreen(
                                     placeholder = { Text(stringResource(R.string.bill_amount)) },
                                     prefix = { Text("${foreignCurrency.symbol} ", fontWeight = FontWeight.SemiBold) },
                                     suffix = { Text(foreignCurrency.code, fontWeight = FontWeight.Medium) },
+                                    trailingIcon = {
+                                        IconButton(
+                                            onClick = {
+                                                scannerTargetIsBill = true
+                                                showCameraScanner = true
+                                            }
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Outlined.DocumentScanner,
+                                                contentDescription = "Scan Bill",
+                                                tint = MaterialTheme.colorScheme.primary
+                                            )
+                                        }
+                                    },
                                     singleLine = true,
                                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                                     shape = RoundedCornerShape(12.dp),
@@ -758,6 +791,26 @@ fun TravelCalculatorScreen(
                         Text(stringResource(R.string.cancel))
                     }
                 }
+            )
+        }
+
+        // Camera Price OCR Scanner Dialog
+        if (showCameraScanner) {
+            CameraPriceScannerDialog(
+                foreignCurrency = foreignCurrency,
+                homeCurrency = homeCurrency,
+                convertAmount = { amt, from, to -> viewModel.convertAmount(amt, from, to) },
+                formatValue = { amt -> viewModel.formatValue(amt) },
+                onPriceSelected = { detectedPrice ->
+                    val formatted = viewModel.formatValue(detectedPrice).replace(",", "")
+                    if (scannerTargetIsBill) {
+                        billInput = formatted
+                    } else {
+                        priceInput = formatted
+                    }
+                    showCameraScanner = false
+                },
+                onDismiss = { showCameraScanner = false }
             )
         }
     }

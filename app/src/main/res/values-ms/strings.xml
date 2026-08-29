@@ -73,6 +73,15 @@
     <string name="add_to_trip_list">Tambah ke Senarai Belanja</string>
     <string name="trip_expenses">Senarai Perbelanjaan Perjalanan</string>
     <string name="clear_trip_list">Padam Senarai</string>
+    <string name="scan_price_tag">Imbas Tanda Harga (Kamera)</string>
+    <string name="camera_scanner_title">Pengimbas Tanda Harga Langsung</string>
+    <string name="camera_permission_required">Kebenaran kamera diperlukan untuk mengimbas tanda harga.</string>
+    <string name="grant_permission">Berikan Kebenaran</string>
+    <string name="scanning_hint">Halakan kamera ke tanda harga dalam bingkai</string>
+    <string name="detected_price">Harga Dikesan</string>
+    <string name="use_this_price">Gunakan Harga Ini</string>
+    <string name="flashlight">Lampu Suluh</string>
+    <string name="rescan">Imbas Semula</string>
     <string name="grand_total">Jumlah Keseluruhan Perjalanan</string>
     
     <!-- Trends -->
